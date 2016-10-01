@@ -18,6 +18,14 @@ public class ResultadoCadastroDebitoAutoActivity extends AppCompatActivity {
         txtDataDebito = (TextView) findViewById(R.id.txtDataDebito);
         txtValor = (TextView) findViewById(R.id.txtValorDebito);
         txtTipoDeDebito = (TextView) findViewById(R.id.txtTipoDeDebito);
+
+        txtDataDebito.setText(intent.getStringExtra(CadastroDebitoAutoActivity.EXTRA_DATANOVODEBITO));
+        txtValor.setText(intent.getStringExtra(CadastroDebitoAutoActivity.EXTRA_VALORNOVODEBITO));
+        txtTipoDeDebito.setText(intent.getStringExtra(CadastroDebitoAutoActivity.EXTRA_TIPODEDEBITO));
+    }
+    public void confirmar(View v){
+        Intent intent = new Intent(this, MenuPrincipalActivity.class);
+        startActivity(intent);
     }
     @Override
     public void onStart(){
